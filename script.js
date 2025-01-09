@@ -17,22 +17,22 @@ const winpatterns = [
 ];
 
 const resetgame = () => {
-    turno = true; // Reset turn to true (boolean)
+    turno = true; 
     enableboxes();
-    msgcontainer.classList.add("hide"); // Hide the message container
+    msgcontainer.classList.add("hide"); 
 };
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
         console.log("box was clicked");
         if (turno) {
-            box.innerText = "O"; // Use consistent case for "O"
+            box.innerText = "O"; // 
             turno = false;
         } else {
             box.innerText = "X";
             turno = true;
         }
-        box.disabled = true; // Disable the clicked box
+        box.disabled = true; 
 
         checkwinner();
     });
@@ -40,14 +40,14 @@ boxes.forEach((box) => {
 
 const disableboxes = () => {
     for (let box of boxes) {
-        box.disabled = true; // Use boolean `true`
+        box.disabled = true; 
     }
 };
 
 const enableboxes = () => {
     for (let box of boxes) {
-        box.disabled = false; // Use boolean `false`
-        box.innerText = ""; // Clear the text in boxes
+        box.disabled = false; 
+        box.innerText = ""; 
     }
 };
 
